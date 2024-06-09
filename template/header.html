@@ -1,0 +1,27 @@
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content ">
+  {%for cat in cats%}
+    <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+  {%endfor%}
+  </ul>
+  <nav class="bg-primary">
+    <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">IBlogs</a>
+      <ul class="right hide-on-med-and-down">
+        {% if request.user.is_authenticated %}
+        <a href="/logout/" class="get-started-btn scrollto">Log Out</a>
+        {% else %}
+        <a href="{% url 'signup' %}" class="get-started-btn scrollto" >Sign Up</a>
+        {% endif %}
+        <!-- <li><a href="/admin">Admin</a></li> -->
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-trigger" href="" data-target="dropdown1">Category<i class="material-icons right">arrow_drop_down</i></a></li>
+       
+      </ul>
+    </div>
+</div>
+  </nav>
+          
+  

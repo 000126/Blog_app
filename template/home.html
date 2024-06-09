@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block title %} Welcome to IBlogs {% endblock %} {% block content%}
+
+<div class="container">
+    <div class="row" >
+        <div class="container-custom">
+            <div class="owl-carousel"style="display: flex;justify-content: space-evenly; flex-wrap: wrap; display: flex; margin:10px;">
+                {%for cat in cats%}
+                <div class="card">
+                    <div class="img-container" >
+                        <img src="/media/{{cat.image}}" class="responsive-img image-res"alt="" style="height: 250px; width: 450px; object-fit: auto;" >
+                    </div>
+                    <div class="card-content" >
+                        <div class="card-title">
+                            {{cat.title}}
+                        </div>
+                        <p class="truncate" style="white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">{{cat.description}}</p>
+                    </div>
+                    <div class="container ">
+                        <a href="/category/{{cat.url}}" class="btn bg-primary" style="margin-bottom: 25px; ">View</a>
+                    </div>
+                </div>
+                {%endfor%}
+                
+            </div>
+        </div>
+   
+        <!-- <div class="col s12 m8">
+            {% for p in posts %}
+            <div class="row">
+                <div class="col1 s12 m8">
+
+                 <div class="col s12 ">
+                    <img src="/media/{{p.image}}" class="responsive-img mt20"alt="" style="height: 150px;">
+
+                    {{p.content|safe}}
+                    
+                </div>
+               
+                </div>
+                
+                <div class="">
+                    <a href="/blog/{{p.url}}" class="btn bg-primary">Read More..</a>
+                </div>
+            </div>
+            {% endfor %}
+            
+            
+        </div> -->
+    </div>
+</div>
+{% endblock %}

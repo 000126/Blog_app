@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %} Welcome to IBlogs {% endblock %} {% block content%}
+
+<div class="container-custom">
+    
+    <div class="img-container">
+        <img src="/media/{{cat.image}}" alt="" class="responsive-img" style="height: 250px; width:350px; object-fit: cover;margin-top: 25px;">
+    </div>
+    <h1>{{cat.title}}</h1>
+    <p>{{cat.description}}</p>
+</div>
+<div class="collection">
+    {%for p in posts%}
+    <a href="/blog/{{p.url}}" class="collection-item">{{p.title}}</a>
+    {%endfor%}
+</div>
+
+
+
+
+{%endblock%}
